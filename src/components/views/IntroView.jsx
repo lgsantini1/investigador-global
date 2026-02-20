@@ -79,7 +79,7 @@ function ConfigScreen({ onBack }) {
         }}>
             <div style={{
                 position: 'absolute', inset: 0,
-                backgroundImage: "url('/assets/images/intro/cover.png')",
+                backgroundImage: `url('${import.meta.env.BASE_URL}assets/images/intro/cover.png')`,
                 backgroundSize: 'cover', backgroundPosition: 'center',
                 filter: 'brightness(0.15) saturate(1.1) blur(4px)',
             }} />
@@ -404,7 +404,7 @@ function MissionScreen({ gameData, difficulty, onStart, onBack }) {
             {/* Background */}
             <div style={{
                 position: 'absolute', inset: 0,
-                backgroundImage: gameData.loot?.image ? `url('${gameData.loot.image}')` : "url('/assets/images/intro/cover.png')",
+                backgroundImage: gameData.loot?.image ? `url('${gameData.loot.image}')` : `url('${import.meta.env.BASE_URL}assets/images/intro/cover.png')`,
                 backgroundSize: 'cover', backgroundPosition: 'center',
                 filter: 'blur(10px) brightness(0.18) saturate(1.3)',
                 transform: 'scale(1.1)',

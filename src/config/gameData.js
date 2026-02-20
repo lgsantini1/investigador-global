@@ -1,6 +1,9 @@
 export const DAY_COST_INVESTIGATE = 0.5;
 export const DAY_COST_TRAVEL = 1.0;
 
+// Helper: resolves asset paths correctly for both local dev and GitHub Pages
+const asset = (path) => import.meta.env.BASE_URL + path;
+
 // Difficulty levels — each alters days available, route length and clue quality
 export const DIFFICULTIES = {
   rookie: {
@@ -49,31 +52,31 @@ export const DIFFICULTIES = {
 
 export const VILLAINS = [
   {
-    name: "Carmen Vermelha", gender: "Feminino", hair: "Preto", auto: "Conversível", feature: "Colar de Rubi", image: "/assets/images/villains/carmen.png",
+    name: "Carmen Vermelha", gender: "Feminino", hair: "Preto", auto: "Conversível", feature: "Colar de Rubi", image: asset("assets/images/villains/carmen.png"),
     lore: "Ex-espiã corporativa que decidiu usar suas habilidades para roubar artefatos inestimáveis. Elegante, letal e sempre um passo à frente da Interpol.",
     personality: "arrogante",
     quirk: "Sempre deixa uma rosa vermelha com as pétalas cortadas no local do crime."
   },
   {
-    name: "Barão Bomba", gender: "Masculino", hair: "Loiro", auto: "Limousine", feature: "Tatuagem", image: "/assets/images/villains/barao.png",
+    name: "Barão Bomba", gender: "Masculino", hair: "Loiro", auto: "Limousine", feature: "Tatuagem", image: asset("assets/images/villains/barao.png"),
     lore: "Líder de um sindicato do crime na Europa Oriental. Usa força bruta, mas também possui um intelecto afiado para lavagem de dinheiro em paraísos fiscais.",
     personality: "agressivo",
     quirk: "Bebe apenas vodka envelhecida e exige ser chamado pelo seu título de nobreza fajuto."
   },
   {
-    name: "Lady Lâmina", gender: "Feminino", hair: "Ruivo", auto: "Moto Esportiva", feature: "Anel de Diamante", image: "/assets/images/villains/lady.png",
+    name: "Lady Lâmina", gender: "Feminino", hair: "Ruivo", auto: "Moto Esportiva", feature: "Anel de Diamante", image: asset("assets/images/villains/lady.png"),
     lore: "Mercenária internacional procurada por furto qualificado e evasões espetaculares de prisões de segurança máxima. Move-se pelas sombras.",
     personality: "imprevisível",
     quirk: "Gira compulsivamente uma moeda antiga de ouro enquanto planeja seu próximo passo."
   },
   {
-    name: "Dr. Dados", gender: "Masculino", hair: "Castanho", auto: "SUV Blindado", feature: "Óculos Escuros", image: "/assets/images/villains/dados.png",
+    name: "Dr. Dados", gender: "Masculino", hair: "Castanho", auto: "SUV Blindado", feature: "Óculos Escuros", image: asset("assets/images/villains/dados.png"),
     lore: "Gênio da cibersegurança que invadiu os servidores da ACME Detective Agency três vezes por pura diversão antes de se voltar para o roubo de relíquias reais.",
     personality: "nerd e obsessivo",
     quirk: "Se recusa a tocar nas coisas sem luvas, tem fobia crônica a ambientes sujos ou desorganizados."
   },
   {
-    name: "Condessa Code", gender: "Feminino", hair: "Loiro", auto: "Jato Privado", feature: "Chapéu Elegante", image: "/assets/images/villains/condessa.png",
+    name: "Condessa Code", gender: "Feminino", hair: "Loiro", auto: "Jato Privado", feature: "Chapéu Elegante", image: asset("assets/images/villains/condessa.png"),
     lore: "Nascida na alta sociedade, usa suas conexões diplomáticas para contrabandear pelas fronteiras sem nunca ser revistada pela alfândega.",
     personality: "narcisista esnobe",
     quirk: "Tira fotos de si mesma nos monumentos enquanto a polícia ainda está investigando a cena do crime anterior."
@@ -93,9 +96,9 @@ export const CITIES = {
     },
     coords: [-22.9068, -43.1729],
     color: "#f59e0b",
-    image: "/assets/images/cities/rio.png",
+    image: asset("assets/images/cities/rio.png"),
     bgm: "bgm_rio",
-    arrestBg: "/assets/images/arrests/rio.png"
+    arrestBg: asset("assets/images/arrests/rio.png")
   },
   "Paris": {
     name: "Paris",
@@ -109,9 +112,9 @@ export const CITIES = {
     },
     coords: [48.8566, 2.3522],
     color: "#3b82f6",
-    image: "/assets/images/cities/paris.png",
+    image: asset("assets/images/cities/paris.png"),
     bgm: "bgm_paris",
-    arrestBg: "/assets/images/arrests/paris.png"
+    arrestBg: asset("assets/images/arrests/paris.png")
   },
   "Tóquio": {
     name: "Tóquio",
@@ -125,9 +128,9 @@ export const CITIES = {
     },
     coords: [35.6762, 139.6503],
     color: "#8b5cf6",
-    image: "/assets/images/cities/toquio.png",
+    image: asset("assets/images/cities/toquio.png"),
     bgm: "bgm_toquio",
-    arrestBg: "/assets/images/arrests/toquio.png"
+    arrestBg: asset("assets/images/arrests/toquio.png")
   },
   "Cairo": {
     name: "Cairo",
@@ -141,9 +144,9 @@ export const CITIES = {
     },
     coords: [30.0444, 31.2357],
     color: "#eab308",
-    image: "/assets/images/cities/cairo.png",
+    image: asset("assets/images/cities/cairo.png"),
     bgm: "bgm_cairo",
-    arrestBg: "/assets/images/arrests/cairo.png"
+    arrestBg: asset("assets/images/arrests/cairo.png")
   },
   "Nova York": {
     name: "Nova York",
@@ -157,9 +160,9 @@ export const CITIES = {
     },
     coords: [40.7128, -74.0060],
     color: "#10b981",
-    image: "/assets/images/cities/novayork.png",
+    image: asset("assets/images/cities/novayork.png"),
     bgm: "bgm_novayork",
-    arrestBg: "/assets/images/arrests/novayork.png"
+    arrestBg: asset("assets/images/arrests/novayork.png")
   },
   "Londres": {
     name: "Londres",
@@ -173,16 +176,16 @@ export const CITIES = {
     },
     coords: [51.5074, -0.1278],
     color: "#64748b",
-    image: "/assets/images/cities/londres.png",
+    image: asset("assets/images/cities/londres.png"),
     bgm: "bgm_londres",
-    arrestBg: "/assets/images/arrests/londres.png"
+    arrestBg: asset("assets/images/arrests/londres.png")
   }
 };
 
 export const LOOT = [
-  { name: "o Diamante Hope", image: "/assets/images/loots/loot_diamante_hope_1771546674975.png" },
-  { name: "o Código Fonte da Internet", image: "/assets/images/loots/loot_codigo_fonte_1771546690029.png" },
-  { name: "a Coroa Real", image: "/assets/images/loots/loot_coroa_real_1771546713166.png" },
-  { name: "o Mapa do Tesouro", image: "/assets/images/loots/loot_mapa_tesouro_1771546731435.png" },
-  { name: "a Mona Lisa", image: "/assets/images/loots/loot_mona_lisa_1771546746436.png" }
+  { name: "o Diamante Hope", image: asset("assets/images/loots/loot_diamante_hope_1771546674975.png") },
+  { name: "o Código Fonte da Internet", image: asset("assets/images/loots/loot_codigo_fonte_1771546690029.png") },
+  { name: "a Coroa Real", image: asset("assets/images/loots/loot_coroa_real_1771546713166.png") },
+  { name: "o Mapa do Tesouro", image: asset("assets/images/loots/loot_mapa_tesouro_1771546731435.png") },
+  { name: "a Mona Lisa", image: asset("assets/images/loots/loot_mona_lisa_1771546746436.png") }
 ];

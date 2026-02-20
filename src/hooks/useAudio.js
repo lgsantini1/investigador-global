@@ -43,7 +43,7 @@ export function useAudio() {
             return;
         }
 
-        bgmRef.current.src = `/assets/audio/${trackName}.mp3`;
+        bgmRef.current.src = `${import.meta.env.BASE_URL}assets/audio/${trackName}.mp3`;
 
         if (!isMutedRef.current) {
             bgmRef.current.play().catch(() => {
@@ -60,7 +60,7 @@ export function useAudio() {
 
     const playSFX = useCallback((soundName) => {
         if (isMutedRef.current) return;
-        sfxRef.current.src = `/assets/audio/${soundName}.mp3`;
+        sfxRef.current.src = `${import.meta.env.BASE_URL}assets/audio/${soundName}.mp3`;
         sfxRef.current.play().catch(() => { });
     }, []);
 
