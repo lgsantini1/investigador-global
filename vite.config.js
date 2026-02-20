@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/investigador-global/',
   plugins: [react()],
   server: {
     host: true,   // expõe para toda a rede local (0.0.0.0)
