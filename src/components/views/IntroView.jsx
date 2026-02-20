@@ -30,7 +30,7 @@ function SplashScreen({ onDone }) {
             {/* Background image with Ken Burns pan */}
             <div style={{
                 position: 'absolute', inset: 0,
-                backgroundImage: "url('/assets/images/intro/splash.png')",
+                backgroundImage: `url('${import.meta.env.BASE_URL}assets/images/intro/splash.png')`,
                 backgroundSize: 'cover', backgroundPosition: 'center',
                 animation: 'splash-zoom 4s ease-out forwards',
             }} />
